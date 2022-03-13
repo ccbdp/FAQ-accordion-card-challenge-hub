@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background-image: linear-gradient(
+    180deg,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  background-repeat: no-repeat;
+}
+body {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+.card {
+  background-color: white;
+  padding: 9em 1em 2em;
+  border-radius: 15px;
+  width: 90%;
+  width: 340px;
+}
+.illustration {
+  margin-bottom: -7em;
+  z-index: 1;
+}
+
+.illustration img:nth-of-type(1) {
+  position: relative;
+}
+.illustration img:nth-of-type(2) {
+  margin-top: -5em;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1em 0em;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+h2 {
+  font-size: 1.1em;
+  font-weight: 400;
+  text-align: start;
+  color: hsl(238, 29%, 16%);
+}
+p {
+  font-size: 0.9em;
+  padding: 0em 1.3em 1em 0em;
+  color: hsl(240, 6%, 50%);
+  line-height: 1.4em;
+  display: none;
+}
+.attribution {
+  color: white;
+  margin-top: 3em;
+}
+.attribution a {
+  color: pink;
+}
+
+.illustration-desk {
+  display: none;
+}
+
+/* active state */
+.active p {
+  display: block;
+}
+.active h2 {
+  font-weight: 700;
+}
+
+.active img {
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    min-height: 100vh;
+    margin-top: 0;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    width: 910px;
+    height: 427px;
+  }
+  .illustration {
+    display: none;
+  }
+  ul {
+    grid-column: 2/3;
+    padding: 3em 4em 4em 3em;
+  }
+  .illustration-desk {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 125%;
+    background-position: -170px -100px;
+    display: flex;
+  }
+  .img-1 {
+    width: 425px;
+    object-fit: contain;
+    object-position: right;
+    transform: translate(-50px, 50px);
+    position: fixed;
+  }
+  .img-2 {
+    transform: translate(-90px, 150px);
+    position: fixed;
+  }
+
+  h1 {
+    text-align: start;
+  }
+  button h2:hover {
+    color: hsl(14, 88%, 65%);
+  }
+}
